@@ -1,12 +1,17 @@
-function firstWord(s) {
+function firstWord(str) {
   // your code here
-	if (!s) {
-        return '';
-    }
+	 const trimmedStr = str.trim();
 
-    const words = s.split(' ');
+  // Find the index of the first space
+  const firstSpaceIndex = trimmedStr.indexOf(' ');
 
-    return words[0] || s;
+  if (firstSpaceIndex === -1) {
+    // No space found, return the entire string
+    return trimmedStr;
+  } else {
+    // Extract the first word up to the first space
+    return trimmedStr.slice(0, firstSpaceIndex);
+  }
 }
 
 // Do not change the code below
